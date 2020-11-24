@@ -6,7 +6,7 @@ r = requests.get("https://en.wikipedia.org/wiki/Python_(programming_language)")
 
 soup = bs4.BeautifulSoup(r.text, 'lxml')
 
-toc = soup.select('.toctext')
+toc = soup.select('.firstHeading')
 
 for t in toc:
     print(t.getText())
